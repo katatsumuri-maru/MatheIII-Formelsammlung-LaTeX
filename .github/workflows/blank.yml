@@ -32,8 +32,8 @@ jobs:
 
     - name: Generate pdfs 
       run: |
-            cd /home/runner/work/repo/repo/templats
-            pdflatex my_resume.tex
+            cd /home/runner/work/repo/repo
+            pdflatex formelsammlung.tex
 
     - name: Commit and push PDFs
       run: |
