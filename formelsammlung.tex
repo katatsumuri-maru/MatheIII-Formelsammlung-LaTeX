@@ -1,14 +1,17 @@
 \documentclass[11pt,a4paper]{article}
-\usepackage[margin=1cm,landscape]{geometry}
+\pagestyle{empty}
+\usepackage[landscape, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
 \usepackage{multicol}
-\setlength{\columnsep}{1cm} % Abstand zwischen den Spalten
+\setlength{\columnsep}{0.25cm} % Abstand zwischen den Spalten
 
-\usepackage{lipsum} % Für Blindtext, kannst du entfernen
+\usepackage{lipsum} % Für Blindtext, kann entfernt werden
 
 \begin{document}
 
 \begin{multicols}{3}
-\lipsum[1-6]
+Seitenanfang
+\lipsum[1-21]
+Seitenende
 \end{multicols}
 
 \end{document}
