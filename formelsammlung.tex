@@ -1,15 +1,14 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=1cm,landscape]{geometry}
-\usepackage{fontspec}
-\usepackage[draft]{flowfram}
-\ffvadjustfalse
-\setlength{\columnsep}{1cm}
-\Ncolumn{3}
+\usepackage{multicol}
+\setlength{\columnsep}{1cm} % Abstand zwischen den Spalten
 
-\usepackage{lipsum}
+\usepackage{lipsum} % Für Blindtext, kannst du entfernen
 
 \begin{document}
 
+\begin{multicols}{3}
 \lipsum[1-6]
+\end{multicols}
 
 \end{document}
