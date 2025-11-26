@@ -22,7 +22,8 @@ jobs:
             texlive-latex-extra \
             texlive-fonts-recommended \
             latexmk \
-            lmodern
+            lmodern \
+            texlive-xetex
 
       - name: Generate pdf
         run: pdflatex formelsammlung.tex
