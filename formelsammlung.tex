@@ -1,17 +1,181 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper,landscape]{article}
 \pagestyle{empty}
 \usepackage[landscape, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
-\usepackage{multicol}
-\setlength{\columnsep}{0.25cm} % Abstand zwischen den Spalten
-
-\usepackage{lipsum} % Für Blindtext, kann entfernt werden
+\usepackage{paracol}
+\usepackage{amsmath,amssymb}
 
 \begin{document}
+\begin{paracol}{3}
 
-\begin{multicols}{3}
-Seitenanfang
-\lipsum[1-21]
-Seitenende
-\end{multicols}
+\section{Funktionen in $\mathbb{R}^n$}
+\subsection{Metrik}
 
+Eine Funktion \( d: \mathbb{R}^n \times \mathbb{R}^n \to \mathbb{R}_0^+ \) mit \( \forall x, y, z \in \mathbb{R}^n \):
+
+\noindent
+\textbf{Positive Definitheit}
+
+$
+    d(x, y) \geq 0 \quad \text{und} \quad d(x, y) = 0 \iff x = y
+$
+
+\noindent
+\textbf{Symmetrie}
+$
+    d(x, y) = d(y, x)
+$
+
+\noindent
+\textbf{Dreiecksungleichung}
+$
+    d(x, y) \leq d(x, z) + d(z, y)
+$
+
+\noindent
+\textbf{Triviale Metrik:}
+
+$
+d(x,y) = \begin{cases}
+1 &\text{falls } x \neq y \\
+0 &\text{falls } x = y \\
+\end{cases}
+$
+
+\noindent
+\textbf{Französische Eisenbahnmetrik:}
+
+$
+d(x,y) = \begin{cases}
+|x-y| &\text{falls } \exists \lambda \in \mathbb R : x = \lambda y \\
+|x| + |y| &\text{sonst} \\
+\end{cases}
+$
+
+\subsection{Normen in $\mathbb R ^n$}
+
+Eine Funktion $||.|| : \mathbb R^n \to \mathbb R^+_0$ mit
+
+\noindent
+\textbf{Positive Definitheit}
+$
+ ||x|| \ge 0 \land ||x|| = 0 \iff x = 0
+$
+
+\noindent
+\textbf{Homogenität}
+$
+ ||\lambda x|| = |\lambda| ||x||
+$
+
+\noindent
+\textbf{Dreiecksungleichung}
+$
+ ||x+y|| \le ||x|| + ||y||
+$
+
+\textbf{$l_1$-Norm}
+$
+||x||_1 = |x_1| + \dots + |x_n|
+$
+
+\textbf{$l_p$-Norm}
+$
+||x||_p = \sqrt[p]{x_1^p+\dots+x_n^p}
+$
+
+\textbf{Maximum-Norm}
+$
+||x||_\infty = \max\{ |x_i| : i=1, \dots, n\}
+$
+
+\noindent
+\textbf{Satz}
+Jede Norm induziert über $d(x,y) = ||x-y||$ eine Metrik.
+
+\subsection{Bilinearform}
+Eine Funktion $\langle.,. \rangle_A : \mathbb R^n \times R^n \to \mathbb R$ heißt billinearform, wenn sie in beiden Argumenten linear ist:
+
+$
+\langle \alpha x + \beta y, z\rangle_A = \alpha \langle x,z \rangle_A + \beta \langle y,z \rangle_A
+$
+
+$
+\langle z, \alpha x + \beta y \rangle_A = \alpha \langle z,x \rangle_A + \beta \langle z,y\rangle_A
+$
+
+\noindent
+Weitere, mögliche Eigenschaften:
+
+\textbf{Symmetrie}: $\forall x,y \in \mathbb R^n :\langle x,y \rangle_A = \langle y, x \rangle_A$
+
+\textbf{Positive Definitheit}: $\forall x \in \mathbb R^n \land x \neq 0: \langle x,x \rangle_A > 0$
+
+\noindent
+Jede Quadratische Matrix $B$ erzeugt eine Bilinearform über $x^T B y$
+
+\switchcolumn
+\subsection{Topologie in $\mathbb R^n$}
+
+\textbf{Offene Kugel mit Radius r um a:} 
+
+$U_R(a) := \{x \in \mathbb R^n: ||x-a|| < r \}$
+
+\noindent
+\textbf{Innerer Punkt $a \in A \subseteq \mathbb R^n$:} 
+$\exists \varepsilon > 0: U_\varepsilon(a) \subseteq A$
+
+\noindent 
+\textbf{Offenes Intervall:} Jeder Punkt ist innerer Punkt: 
+
+$\forall a \in A : \exists \varepsilon > 0: U_\varepsilon(a) \subseteq A$
+\indent bsp: $\mathbb R^n, \{\}, U_r(a)$
+
+\noindent
+\textbf{Abgeschlossenes Intervall:}
+Komplement ist offen
+
+bsp: $\mathbb R^n, \{ \}$
+
+\noindent
+\textbf{Beschränkt:}
+$\exists M \in \mathbb R: A \subset U_M(0)$
+
+\noindent
+\textbf{Kompakt:} Abgeschlossen und beschränkt
+
+\subsection{Folgen in $\mathbb{R}^n$}
+
+\textbf{Konvergenz:}
+
+$\exists g \in \mathbb R^n :\forall \varepsilon > 0: \exists M \in \mathbb N: \forall m \ge M: ||a_m -g|| < \varepsilon$
+
+\noindent
+\textbf{Mehrdimensionale Konvergenz:} Konvergiert genau dann, wenn alle Komponenten gegen den jeweiligen Wert konvergieren.
+
+\noindent
+\textbf{Cauchyfolge:}
+
+$\forall \varepsilon > 0: \exists M \in \mathbb N; \forall s,m \ge M: ||a_s - a_m|| < \varepsilon$
+
+\noindent
+\textbf{Banachraum:}
+Jede Cauchyfolge Konvergiert und die Metrik wird durch eine Norm induziert
+
+Bsp: $R^n$ mit $l_p$-Norm
+
+\subsection{Funktionen}
+\textbf{Graph von $f: \mathbb R^n \to \mathbb R^m$:}
+
+$\Gamma_f := \{(x_1, \dots, x_n , z_1, \dots, z_m \in) D \times \mathbb R ^m: z_i = f_i(x_1, \dots, x_n)\}$
+
+\noindent
+\textbf{Höhen/Niveaulinie von $f: D \subseteq \mathbb R^2 \to \mathbb R$}
+
+$H_c(f) := \{(x,y) \in D \mid f(x,y) = c\}$
+
+\noindent \textbf{Niveaufläche von $f:D \subseteq \mathbb R^n \to \mathbb R$:}
+
+$H_c(f) := \{(x_1,\dots, x_n) \in D \mid f(x_1, \dots, x_n) = c\}$
+\switchcolumn
+\end{paracol}
 \end{document}
