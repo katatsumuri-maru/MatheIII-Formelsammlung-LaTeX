@@ -1,10 +1,11 @@
-\documentclass[11pt,a4paper,landscape]{article}
+\documentclass[6pt,a4paper,landscape]{article}
 \pagestyle{empty}
 \usepackage[landscape, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
 \usepackage{paracol}
 \usepackage{amsmath,amssymb}
 
 \begin{document}
+\footnotesize
 \begin{paracol}{3}
 
 \section{Funktionen in $\mathbb{R}^n$}
@@ -113,7 +114,7 @@ Weitere, mögliche Eigenschaften:
 \noindent
 Jede Quadratische Matrix $B$ erzeugt eine Bilinearform über $x^T B y$
 
-\switchcolumn
+
 \subsection{Topologie in $\mathbb R^n$}
 
 \textbf{Offene Kugel mit Radius r um a:} 
@@ -143,6 +144,14 @@ $\exists M \in \mathbb R: A \subset U_M(0)$
 \noindent
 \textbf{Kompakt:} Abgeschlossen und beschränkt
 
+
+
+
+\switchcolumn
+
+\setcounter{section}{1}
+\setcounter{subsection}{4}
+
 \subsection{Folgen in $\mathbb{R}^n$}
 
 \textbf{Konvergenz:}
@@ -166,6 +175,7 @@ Bsp: $R^n$ mit $l_p$-Norm
 \subsection{Funktionen}
 \textbf{Graph von $f: \mathbb R^n \to \mathbb R^m$:}
 
+\noindent
 $\Gamma_f := \{(x_1, \dots, x_n , z_1, \dots, z_m \in) D \times \mathbb R ^m: z_i = f_i(x_1, \dots, x_n)\}$
 
 \noindent
@@ -176,6 +186,168 @@ $H_c(f) := \{(x,y) \in D \mid f(x,y) = c\}$
 \noindent \textbf{Niveaufläche von $f:D \subseteq \mathbb R^n \to \mathbb R$:}
 
 $H_c(f) := \{(x_1,\dots, x_n) \in D \mid f(x_1, \dots, x_n) = c\}$
+
+\noindent
+\textbf{Eindimensionaler Schnitt}
+
+$f(a_1, \dots, a_{i-1}, x_i, a_{i+1}, a_n)$ mit $a_k$ konst.
+
+\noindent
+\textbf{Kurve}
+
+Ist $f : \mathbb R^n \to \mathbb R^m$ eine Funktion mit $f (x_1, \dots, x_n)$, dann ist $\phi : \mathbb R \to \mathbb R^n$ eine Kurve im $\mathbb R^n$ und $f (\phi(t))$ die Funktion entlang dieser Kurve.
+
+\noindent
+\textbf{Stetigkeit von Funktionen $\mathbb R^n \to \mathbb R^m$ ($\varepsilon-\delta$-Kriterium)}
+Eine Funktion ist Stetig in einem Punkt a, gdw. Gilt:
+$\forall \varepsilon > 0: \exists \delta >0: ||x-a|| < \delta \implies ||f(x) - f(a) || < \varepsilon$
+\newline\noindent 
+\textbf{Satz}
+Eine Funktion $f : D \subseteq \mathbb R^n \to \mathbb R ^m$ ist genau dann stetig in $a \in D$, wenn dies
+für die Funktionen $f_1,\dots, f_m$ gilt.
+
+\noindent \textbf{Polynom in $n$ Variablen vom Grad $m$}
+
+\noindent
+\[
+\sum_{i=0}^m \;\; \sum_{\substack{\alpha \in \mathbb{N}_0^n \\ |\alpha| = i}} a_\alpha \; x_1^{\alpha_1} \cdots x_n^{\alpha_n}
+\]
+mit $\alpha = (\alpha_1, \dots, \alpha_n)$ Multiindex, $a_\alpha \in \mathbb{R}$ (Vorfaktoren) und $|\alpha| = \alpha_1 + \dots + \alpha_n$.
+
+
+
+\section{Differenzierbarkeit in $\mathbb R^n$}
+
+\subsection{Ableitungsregeln in $\mathbb R^1$}
+
+\noindent
+\textbf{Linearität}
+$ (f + g)' = f' + g' \qquad (c \cdot f)' = c \cdot f' $
+
+\noindent
+\textbf{Produktregel}
+$ (f \cdot g)' = f' \cdot g + f \cdot g' $
+
+\noindent
+\textbf{Quotientenregel}
+$ \left( f/g\right)' = \frac{f' \cdot g - f \cdot g'}{g^2} $
+
+\noindent
+\textbf{Kettenregel}
+$ (f \circ g)'(x) = f'(g(x)) \cdot g'(x) $
+
+\noindent
+\textbf{Potenzregel}
+$ (x^n)' = n x^{n-1} $
+
+\noindent
+\textbf{Ableitung des Logarithmus}
+$ (\ln(f(x)))' = \frac{f'(x)}{f(x)} $
+
+\noindent
+\textbf{Ableitung der Sinusfunktion}
+$ (\sin(f(x)))' = f'(x) \cdot \cos(f(x)) $
+
+\noindent
+\textbf{Ableitung der Kosinusfunktion}
+$ (\cos(f(x)))' = -f'(x) \cdot \sin(f(x)) $
+
 \switchcolumn
+
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+
+
+
+\subsection{Richtungsableitungen}
+Sei \( D \subseteq \mathbb{R}^n \) ein Gebiet und \( e \in \mathbb{R}^n \) eine Richtung mit \( \|e\| = 1 \).
+Dann heißt eine Funktion \( f : D \to \mathbb{R} \) im Punkt \( a \in D \) \textbf{in Richtung \( e \) differenzierbar}, wenn der Grenzwert
+
+$
+\frac{\partial}{\partial e} f(a) := \partial_e f(a) = \lim_{t \to 0} \frac{f(a + t e) - f(a)}{t}
+$
+existiert.
+
+\noindent
+\textbf{Satz}
+\noindent
+Sei \( f : D \subseteq \mathbb{R}^n \to \mathbb{R} \) eine Funktion. Dann ist \( f \) in \( x_0 = (x_1^0, \ldots, x_n^0) \in D \) genau dann in Richtung \( e \) differenzierbar, wenn die Funktion
+$
+\varphi_e(t) := f(x_0 + t e)
+$
+im Punkt \( t_0 = 0 \) nach \( t \) differenzierbar ist. Weiter ist die Ableitung von \( f \) im Punkt \( x_0 \) in Richtung \( e \) gleich der Ableitung von \( \varphi_e(t) \) im Punkt \( t_0 = 0 \).
+
+\subsection{Die Ableitung}
+Sei $D \subseteq \mathbb R^n$ ein Gebiet, dann heißt $f:D \to \mathbb R^n$ differenzierbar in $a \in D$, wenn es $L:\mathbb R^n \to \mathbb R^m$ gibt mit  
+
+$\lim \limits_{||h|| \to 0} \frac{||f(a+h) . f(a) -Lh||}{||h||} = 0$
+
+\noindent
+\textbf{Jacobimatrix}
+
+$$J_f(a) = \begin{bmatrix} 
+\frac{\partial f_1}{\partial x_1} &\dots &\frac{\partial f_1}{\partial x_k} \\ 
+\vdots &\ddots &\vdots \\ 
+\frac{\partial f_n}{\partial x_1} &\dots & \frac{\partial f_n}{\partial x_k} \end{bmatrix}$$
+
+\noindent
+\textbf{Tangentialebene $f: \mathbb R^n \to \mathbb R$}
+
+
+$T(x) = f(a) + \nabla f(a) \cdot (x - a)$
+beziehungsweise
+
+$
+T(x_1, \ldots, x_n) = f(a_1, \ldots, a_n)
++ \sum_{i=1}^n \frac{\partial f}{\partial x_i}(a_1, \ldots, a_n)\cdot (x_i - a_i)
+$
+
+
+\noindent
+\textbf{Gradient $f: \mathbb R^n \to \mathbb R$}
+
+$
+\operatorname{grad}(f) = \nabla f = J_f^T = 
+\begin{pmatrix}
+    \frac{\partial f}{\partial x_1}\\
+    \vdots \\
+    \frac{\partial f}{\partial x_n}
+\end{pmatrix}
+$
+
+\noindent
+\textbf{Divergenz $f: \mathbb R^n \to \mathbb R^n$}
+
+$\operatorname{div}(f) = \nabla f := \sum_{i=1}^n \frac{\partial f_i}{\partial x_iff}$
+
+\noindent
+\textbf{Rotation: $f: \mathbb R^3 \to \mathbb R^3$}
+
+$\nabla \times f(a) := \left( \frac{\partial f_3}{\partial x_2}(a) - \frac{\partial f_2}{\partial x_3}(a), \frac{\partial f_1}{\partial x_3}(a) - \frac{\partial f_3}{\partial x_1}(a), \frac{\partial f_2}{\partial x_1}(a) - \frac{\partial f_1}{\partial x_2}(a) \right)$
+
+\noindent
+\textbf{Lokale Auflösung / Satz von der impliziten Funktion}
+
+\noindent
+Sei $f: D \subseteq \mathbb{R}^2 \to \mathbb{R}$ stetig differenzierbar, $(a, b) \in D$ mit $f(a, b) = 0$ und $\frac{\partial f}{\partial y}(a, b) \neq 0$. Dann existiert eine offene Umgebung $I$ von $a$ und eine eindeutig bestimmte, stetig differenzierbare Funktion $h: I \to \mathbb{R}$ mit $h(a) = b$, sodass
+
+$
+f(x, h(x)) = 0 \quad \text{für alle } x \in I
+$
+
+\noindent
+und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\| < c$ und $f(x, y) = 0$ gilt: $y = h(x)$.
+\end{paracol}
+
+\begin{paracol}{3}
+
+
+
+\newpage
+
+\switchcolumn
+asdf
+\switchcolumn
+asdf
 \end{paracol}
 \end{document}
