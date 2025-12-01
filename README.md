@@ -1,7 +1,9 @@
 # MatheIII-Formelsammlung-LaTeX
 
-[PDF Ansehen (Derzeit defekt)](https://katatsumuri-maru.github.io/MatheIII-Formelsammlung-LaTeX/formelsammlung.pdf)
-
+Quellenangaben:
+Grafik (Matrizenmultiplikation)
+https://de.wikipedia.org/wiki/Datei:Matrix_multiplication_qtl2.svg 
+Abgerufen 2025-12-01
 
 ### Git dazu bringen, die formelsammlung.pdf zu ignorieren:
 

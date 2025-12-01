@@ -3,7 +3,7 @@
 \usepackage[landscape, left=0.5cm, right=0.5cm, top=0.5cm, bottom=0.5cm]{geometry}
 \usepackage{paracol}
 \usepackage{amsmath,amssymb}
-
+\usepackage{graphicx}
 \begin{document}
 \footnotesize
 \begin{paracol}{3}
@@ -348,6 +348,15 @@ und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\
 \switchcolumn
 asdf
 \switchcolumn
-asdf
+\newpage
+
+\section{Anhang}
+\textbf{Matrixmultiplikation}
+\begin{figure}[h!]
+  \includegraphics[width=15em]{Matrixmultiplikation.png}
+\end{figure}
+
+$c_{ik} = \sum_{j=1}^n a_{ij} \cdot b_{jk}$
+
 \end{paracol}
 \end{document}
