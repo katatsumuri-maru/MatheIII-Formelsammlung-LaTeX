@@ -94,7 +94,7 @@ $
 Jede Norm induziert über $d(x,y) = ||x-y||$ eine Metrik.
 
 \subsection{Bilinearform}
-Eine Funktion $\langle.,. \rangle_A : \mathbb R^n \times R^n \to \mathbb R$ heißt billinearform, wenn sie in beiden Argumenten linear ist:
+Eine Funktion $\langle.,. \rangle_A : \mathbb R^n \times \mathbb R^n \to \mathbb R$ heißt billinearform, wenn sie in beiden Argumenten linear ist:
 
 $
 \langle \alpha x + \beta y, z\rangle_A = \alpha \langle x,z \rangle_A + \beta \langle y,z \rangle_A
@@ -316,7 +316,7 @@ H_f(a) = \begin{bmatrix}
 \frac{\partial^2 f}{\partial^2 \partial x_1} & \frac{\partial^2 f}{\partial x_1 \partial x_2} &\dots &\frac{\partial^2 f}{ \partial x_1 \partial x_n}\\
 \vdots & \vdots & \ddots & \vdots\\
 \frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial^2 x_2} &\dots &\frac{\partial^2 f}{\partial x_1 \partial x_n}\\
-\frac{\partial^2 f}{\partial x_m \partial x_1} & \frac{\partial^2 f}{\partial x_m \partial x_2} &\dots &\frac{\partial^2 f}{\partial  x_m \partial x_n}\\
+\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_m \partial x_2} &\dots &\frac{\partial^2 f}{\partial  x_n \partial x_n}\\
 \end{bmatrix}
 $$
 
@@ -377,8 +377,9 @@ $
 T(a+h) = f(a) + \sum \limits_{i=1}^n\left( \frac{\partial f}{\partial x_i}(a) \cdot h_i \right)+   \sum \limits_{i=1}^n  \sum \limits_{j=1}^n \frac{1}{2} \left(\frac{\partial^2 f}{\partial x_i \partial x_j}(a) \cdot h_i h_j \right)+ R
 $
 
+\noindent
 $
-T(a+h) = J_f(a)h + \frac{1}{2} h^T H_f(a)h + R\cdot (x_1^2, \dots, x_n^2)
+T(a+h) = f(a) +  J_f(a) h + \frac{1}{2} h^T H_f(a)h + R\cdot (x_1^2, \dots, x_n^2)
 $
 
 \end{paracol}
@@ -388,9 +389,42 @@ $
 
 
 \newpage
+\setcounter{section}{2}
+\setcounter{subsection}{3}
+
+
+\subsection{Analysis}
+
+\textbf{Sattelpunkt in a}
+
+Erforderliche Eigenschaft:
+$J_f(a) = 0$
+
+Hinreichende Eigenschaft:
+$\det(H_f(a)) < 0$
+
+\noindent
+\textbf{Maximum} 
+
+Erforderliche Eigenschaft:
+$J_f(a) = 0$
+
+Hinreichende Eigenschaft:
+
+$\det(H_f(a)) > 0$ und $H_f(a)$ negativ definit (z.B. $\frac{\partial^2 f}{\partial x^2} < 0$)
+
+\noindent
+\textbf{Minimum}
+
+Erforderliche Eigenschaft:
+$J_f(a) = 0$
+
+Hinreichende Eigenschaft:
+
+$\det(H_f(a)) > 0$ und $H_f(a)$ positiv definit (z.B. $\frac{\partial^2 f}{\partial x^2} > 0$)
 
 \switchcolumn
-asdf
+
 \switchcolumn
 \newpage
 
