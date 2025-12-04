@@ -47,8 +47,8 @@ $
 
 $
 d(x,y) = \begin{cases}
-|x-y| &\text{falls } \exists \lambda \in \mathbb R : x = \lambda y \\
-|x| + |y| &\text{sonst} \\
+||x-y|| &\text{falls } \exists \lambda \in \mathbb R : x = \lambda y \\
+||x|| + ||y|| &\text{sonst} \\
 \end{cases}
 $
 
@@ -340,7 +340,7 @@ $
 \noindent
 \textbf{Divergenz $f: \mathbb R^n \to \mathbb R^n$}
 
-$\operatorname{div}(f) = \nabla f := \sum_{i=1}^n \frac{\partial f_i}{\partial x_iff}$
+$\operatorname{div}(f) = \nabla f := \sum_{i=1}^n \frac{\partial f_i}{\partial x_i}$
 
 \noindent
 \textbf{Rotation: $f: \mathbb R^3 \to \mathbb R^3$}
@@ -359,6 +359,16 @@ $
 
 \noindent
 und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\| < c$ und $f(x, y) = 0$ gilt: $y = h(x)$.
+
+\noindent
+\textbf{Taylorpolynome}
+
+\noindent
+$
+T(a+h) = f(a) + \sum \limits_{i=1}^n\left( \frac{\partial f}{\partial x_i}(a) \cdot h_i \right)+   \sum \limits_{i=1}^n  \sum \limits_{j=1}^n \frac{1}{2} \left(\frac{\partial^2 f}{\partial x_i \partial x_j}(a) \cdot h_i h_j \right)+ R
+$
+
+
 \end{paracol}
 
 \begin{paracol}{3}
