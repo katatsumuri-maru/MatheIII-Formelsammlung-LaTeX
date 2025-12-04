@@ -261,6 +261,18 @@ $ (\sin(f(x)))' = f'(x) \cdot \cos(f(x)) $
 \textbf{Ableitung der Kosinusfunktion}
 $ (\cos(f(x)))' = -f'(x) \cdot \sin(f(x)) $
 
+\noindent
+\textbf{Weitere}
+
+$(\frac{1}{x})' =  \frac{-1}{x^2}$
+
+$(\ln(x))' =  \frac{1}{x}$
+
+$\arctan(x) = \frac{1}{x^2+1}$
+
+$\arccos(x) = \frac{-1}{\sqrt{1-x^2}}$
+
+$\arcsin(x) = \frac{1}{\sqrt{1-x^2}}$
 \switchcolumn
 
 \setcounter{section}{2}
@@ -300,10 +312,11 @@ $$J_f(a) = \begin{bmatrix}
 \frac{\partial f_n}{\partial x_1} &\dots & \frac{\partial f_n}{\partial x_k} \end{bmatrix}$$
 
 \noindent
-\textbf{Tangentialebene $f: \mathbb R^n \to \mathbb R$}
+\textbf{Tangentialebene an Punkt a $f: \mathbb R^n \to \mathbb R$}
 
 
 $T(x) = f(a) + \nabla f(a) \cdot (x - a)$
+mit $x,a \in \mathbb R^n$
 beziehungsweise
 
 $
@@ -360,6 +373,56 @@ asdf
 \newpage
 
 \section{Anhang}
+\noindent
+\textbf{Matrixindizes}
+
+$
+\begin{bmatrix}
+ a_{11} & a_{12} & \dots & a_{1_n}\\
+ a_{21} & a_{22} & \dots & a_{2_n}\\
+ \vdots & \vdots & \ddots & \vdots\\
+ a_{m1} & a_{m2} & \dots & a_{mn}
+\end{bmatrix} \in \mathbb{R}^{m\times n}
+$
+
+\noindent
+\textbf{Inverse Matrix}
+
+$
+\begin{bmatrix}
+ a & b \\
+ c & d \\
+\end{bmatrix}^{-1}
+=
+\frac{1}{ad-bc}
+\begin{bmatrix}
+ d & -b\\
+ -c & a 
+\end{bmatrix}
+$
+
+\noindent
+\textbf{Determinante}
+
+$
+\det \left(
+\begin{bmatrix} 
+a & b & c \\ 
+d & e & f \\ 
+g & h & i 
+\end{bmatrix} 
+\right) = aei + bfg + cdh - ceg - bdi - afh
+$
+
+$
+\det \left(
+\begin{bmatrix} 
+    a & b\\c & d 
+\end{bmatrix}
+\right)=ad-bc
+$
+
+\noindent
 \textbf{Matrixmultiplikation}
 \begin{figure}[h!]
   \includegraphics[width=15em]{Matrixmultiplikation.png}
