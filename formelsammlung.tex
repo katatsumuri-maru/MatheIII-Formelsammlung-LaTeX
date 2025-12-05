@@ -423,6 +423,22 @@ Hinreichende Eigenschaft:
 
 $\det(H_f(a)) > 0$ und $H_f(a)$ positiv definit (z.B. $\frac{\partial^2 f}{\partial^2 x} > 0$)
 
+\subsection{Lagrange-Funktion}
+\textbf{Funktion} 
+$f(x,y) = x^4 + y^5$
+
+\noindent
+\textbf{Nebenbedingung}
+$30 = 2x + 2y \iff g(x,y) = 30 - 2x - 2y = 0$
+
+\noindent
+\textbf{Lagrange-Funktion}
+$\mathcal L(x,y, \lambda) = f(x,y) - \lambda g(x,y)$
+
+\noindent
+\textbf{Vorgehen}
+$\mathcal L(x,y,\lambda)$ jeweils nach $x,y,\lambda$ ableiten und daraus aufösen
+
 \switchcolumn
 \newpage
 
@@ -518,6 +534,20 @@ $
 $c_{ik} = \sum_{j=1}^n a_{ij} \cdot b_{jk}$
 
 \noindent
+\textbf{abc-Formel}
+$f(x) = ax^2 + bx + c = 0$
+
+$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+\noindent
+\textbf{pq-formel}
+$f(x) = x^2 + px + q$
+
+
+$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left( \frac{p}{2} \right)^2 - q}$
+
+
+\noindent
 \textbf{Unbestimmte Integrale}
 
 $
@@ -535,6 +565,13 @@ $
 $
 \int \sin(x) dx = -\cos(x) + C
 $
+
+$\int \frac{1}{x} dx = ln(x) +C$
+
+$\int xe^{x^2} dx = \frac{e^{x^2}}{2}$
+
+$ 
+\int_a^b f'(x)\cdot g(x) \mathrm{d}x = \left[f(x)\cdot g(x)\right]_{a}^{b} - \int_a^b f(x)\cdot g'(x)\,\mathrm{d}x\\$
 
 \end{paracol}
 \end{document}
