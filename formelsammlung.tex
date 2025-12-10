@@ -4,6 +4,7 @@
 \usepackage{paracol}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \begin{document}
 \footnotesize
 \begin{paracol}{3}
@@ -439,37 +440,173 @@ $\mathcal L(x,y, \lambda) = f(x,y) - \lambda g(x,y)$
 \textbf{Vorgehen}
 $\mathcal L(x,y,\lambda)$ jeweils nach $x,y,\lambda$ ableiten und daraus aufösen
 
+\section{Mehrdimensionale Integrale}
+\textbf{Unbestimmte Integrale in $\mathbb R$}
+
+$
+\int x\sin(x) dx = -x cos(x) + sin(x) + C
+$
+
+$
+\int \cos(2x) dx = \frac{1}{2}sin(\frac{x}{2}) + C
+$
+
+$
+\int \cos(x) dx = \sin(x) + C
+$
+
+$
+\int \sin(x) dx = -\cos(x) + C
+$
+
+$\int \frac{1}{x} dx = ln(x) +C$
+
+$\int xe^{x^2} dx = \frac{e^{x^2}}{2}$
+
+$ 
+\int f'(x)\cdot g(x) \mathrm{d}x = \left[f(x)\cdot g(x)\right]_{a}^{b} - \int f(x)\cdot g'(x)\,\mathrm{d}x\\$
+
+\section{Differenzialgleichungen}
+
+
+\noindent
+\textbf{Homogene DGs 1. Ordnung: Trennung der Variablen}
+
+$$
+\begin{aligned}
+\dot{x} &= f(t)g(x)\\
+\int \frac{1}{g(x)} dt &= \int f(t) dt
+\end{aligned}
+$$
+$->$ Nach x auflösen 
+
+\noindent
+\textbf{Nichthomogene DGs 1. Ordnung}
+Sei $\dot{x} = ax + g(t)$ Differenzialgleichung und $x_h(t)$ Lösung der zugehörigen homogenen Differentialgleichung $\dot{x} = ax$, dann ist $\color{red}\alpha x_h +x_p$ eine Lösung für die Diffentialgleichung. Beispiel Bestimmung von $x_p$:
+$$
+\dot{x} = 2x - 4t^2 -4t + 2
+$$
+
+Dann haben $x_p, \dot{x_p}$ die Form
+
+$$
+x_p = c_2t^2 + c_1t + c_0 \quad \texttt{und} \quad  \dot{x_p} = 2c_2t +c_1
+$$
+
+\noindent
+Einsetzen
+$$
+\begin{aligned}
+    \dot{x_p} - x_p &= (-4t^2 - 4t +2)\\
+    (2c_2t + c_1) -2(c_2t^2 + c_1t + c_0) &= (-4t^2 - 4t +2)\\
+\end{aligned}
+$$
+$\to$ Auflösen nach $c_1, c_2, c_3$
+
 \switchcolumn
+
+
+
 \newpage
+\noindent
+\textbf{Homogene DGs 2. Ordnung $\ddot{x} = ax + b\dot{x}$}
 
+Ansatz : $x = e^{\lambda t}$
+
+Charakteristisches Polynom: ${\color{red}( \lambda^2 - b\lambda -a)}e^{\lambda t}$
+
+Nullstellen finden und Lambda einsetzen
 
 \noindent
-\textbf{Selbsttransponierende Tichymatrix}
+\textbf{Allgemeiner Ansatz für lineare DGLs mit konstanten koeffizienten}
+
+Ausgangspunkt: $x^{(n)} = \sum_{i=0}^{n-1}a_i x^{(i)}$
+
+Charakteristisches Polynom: $\lambda^n - \sum_{i=0}^{n-1} a_i \lambda^i$
+
+$$
+\begin{aligned}
+\operatorname{P}(\lambda) &= \lambda^n - \sum_{i=0}^{n-1} a_i \lambda^i\\
+&= \underbrace{\prod_{k=1}^{m_1} (\lambda - \lambda_k)^{s_k}}_{\text{Reelle Nullstellen}} + \underbrace{\prod_{k=m_1 + 1}^{m_1 + m_2} ((\lambda - \lambda_k)(\lambda - \overline{\lambda_k}))^{s_k}}_{\substack{\text{Komplexe Nullstellen} \\ \lambda_k = x_k+y_ki}}
+\end{aligned}
+$$
 
 \noindent
-Eine Matrix \( T \in \mathbb{R}^{3 \times 1} \land T \in \mathbb{R}^{1 \times 3} \) heißt \emph{selbsttransponierende Tichymatrix}, wenn für das Transponieren gilt:
-\[
-T^T = T
-\]
-wobei \( T^T \) die Transponierte von \( T \) bezeichnet. Dies ist genau dann erfüllt, wenn
-\[
-T = 
-\begin{pmatrix}
-t_1 \\
-t_2 \\
-t_3
-\end{pmatrix}
-=
-\begin{pmatrix}
-t_1 & t_2 & t_3
-\end{pmatrix}
-\]
-und die Tichy-Bedingung
-\[
-t_1^2 = t_2^2 = t_3^2 = t_1 t_2 t_3 = -1 
-\]
-gilt. In diesem Fall ist die Tichymatrix ein Vektor, der unter Transposition seine Gestalt bewahrt und dabei stets freundlich bleibt.
+Lösungsbasis:
+$$
+\begin{matrix}
+e^{\lambda_1 t},te^{\lambda_1 t}, \dots , t^{s_1-1}e^{\lambda_1t}\\
+e^{\lambda_2 t},te^{\lambda_2 t}, \dots , t^{s_2-1}e^{\lambda_2t}\\
+\vdots \\
+e^{\lambda_{m_1} t},te^{\lambda_{m_1} t}, \dots , t^{s_{m_1}-1}e^{\lambda_{m_1}t}\\
+e^{x_{m_1 +1 }t} \cdot \cos(y_{m_1+1}t), e^{x_{m_1 +1 }t} \cdot \sin(y_{m_1+1}t)\\
+\vdots\\
+t^{s_{m_1+1}-1}e^{x_{m_1 +1 }t} \cdot \cos(y_{m_1+1}t), \quad\dots \sin(y_{m_1+1}t)\\
+\vdots\\
+e^{x_{m_1 +m_2}t} \cdot \cos(y_{m_1 +m_2}t), \quad\dots \sin(y_{m_1 +m_2}t)\\
+\vdots\\
+t^{s_{m_1 +m_2}-1}e^{x_{m_1 +m_2}t} \cdot \cos(y_{m_1 +m_2}t), \quad\dots \sin(y_{m_1 +m_2}t)\\
+\end{matrix}
+$$
 
+\noindent
+{\color{red}
+Annahme / Raten: Es gilt:
+Sei $\operatorname{grad}(k)$ Grad der Nullstelle k und $b>0$ o.b.d.a., dann gilt:
+$$
+\begin{aligned}
+\{t^q e^{\lambda t} \mid P(\lambda) = 0 \land \lambda \in \mathbb{R} , t<\operatorname{grad}(\lambda) \} 
+\\\cup \{t^q e^{a t} \sin(bt) \mid P(a + bi) = 0 \land t<\operatorname{grad}(a+bi) \} 
+\\\cup \{t^q e^{a t} \cos(bt) \mid P(a + bi) = 0 \land t<\operatorname{grad}(a+bi) \}
+\end{aligned}
+$$
+}
+%\noindent
+%\textbf{Selbsttransponierende Tichymatrix}
+%\noindent
+%Eine Matrix \( T \in \mathbb{R}^{3 \times 1} \land T \in \mathbb{R}^{1 \times 3} \) heißt \emph{selbsttransponierende Tichymatrix}, wenn für das Transponieren gilt:
+%\[
+%T^T = T
+%\]
+%wobei \( T^T \) die Transponierte von \( T \) bezeichnet. Dies ist genau dann erfüllt, wenn
+%\[
+%T = 
+%\begin{pmatrix}
+%t_1 \\
+%t_2 \\
+%t_3
+%\end{pmatrix}
+%=
+%\begin{pmatrix}
+%t_1 & t_2 & t_3
+%\end{pmatrix}
+%\]
+%und die Tichy-Bedingung
+%\[
+%t_1^2 = t_2^2 = t_3^2 = t_1 t_2 t_3 = -1 
+%\]
+%gilt. In diesem Fall ist die Tichymatrix ein Vektor, der unter Transposition seine Gestalt bewahrt und dabei stets freundlich bleibt.
+
+\noindent
+\textbf{Substitution}
+Sei $\dot{x} = f(at+bx+c)$ Differentialgleichung. Substituiere $u = at+bx+c \implies \dot{u} = a+b \cdot \dot{x} = a+bf(u)$ 
+
+Substitution $\to$ Lösen der DG $\to$ Rücksubstitution. Beispiel:
+$$
+\begin{aligned}
+\dot{x} &= 2t-x, x(1) = 2\\
+u(t) &= 2t-x\\
+u'(t) &= 2 - u(t) = h(t)g(u)\\
+h(t) &= 1, g(u) = 2-u\\
+u(1) &= 2 \cdot 1 -2 + 0 = 0\\
+\int \frac{1}{2-u} du &= \int 1 dt\\
+-\ln(2-u) + a &= t \quad c_1 -c_2 = a\\
+\ln(2-u) &= a-t\\
+u &= 2-e^{a-t} \to a = \ln(2)\mid u(1) = 0\\
+x &= 2t - u  \leftarrow u = 2t-x\\
+x &= 2t - 2 + 2e^{-t}
+\end{aligned}
+$$
 
 \switchcolumn
 \newpage
@@ -548,30 +685,7 @@ $x_{1,2} = -\frac{p}{2} \pm \sqrt{\left( \frac{p}{2} \right)^2 - q}$
 
 
 \noindent
-\textbf{Unbestimmte Integrale}
 
-$
-\int x\sin(x) dx = -x cos(x) + sin(x) + C
-$
-
-$
-\int \cos(2x) dx = \frac{1}{2}sin(\frac{x}{2}) + C
-$
-
-$
-\int \cos(x) dx = \sin(x) + C
-$
-
-$
-\int \sin(x) dx = -\cos(x) + C
-$
-
-$\int \frac{1}{x} dx = ln(x) +C$
-
-$\int xe^{x^2} dx = \frac{e^{x^2}}{2}$
-
-$ 
-\int_a^b f'(x)\cdot g(x) \mathrm{d}x = \left[f(x)\cdot g(x)\right]_{a}^{b} - \int_a^b f(x)\cdot g'(x)\,\mathrm{d}x\\$
 
 \end{paracol}
 \end{document}
