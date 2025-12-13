@@ -8,5 +8,5 @@ Abgerufen 2025-12-01
 
 
 ## Selbsttransponierende Tichymatrix
-Markdown Broke 3:
+![alt text](Tichymatrix.png)
 
