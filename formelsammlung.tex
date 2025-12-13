@@ -115,7 +115,6 @@ Weitere, mögliche Eigenschaften:
 \noindent
 Jede Quadratische Matrix $B$ erzeugt eine Bilinearform über $x^T B y$
 
-
 \subsection{Topologie in $\mathbb R^n$}
 
 \textbf{Offene Kugel mit Radius r um a:} 
@@ -373,34 +372,23 @@ $
 
 
 \subsection{Analysis}
+\textbf{Sattelpunkt, Extrema}:
+$\mathbb{R} \to \mathbb{R} :f'(t) =0$ 
 
-\textbf{Sattelpunkt in a}
-
-Erforderliche Eigenschaft:
-$J_f(a) = 0$
-
-Hinreichende Eigenschaft:
-$\det(H_f(a)) < 0$
+$\mathbb{R}^2 \to \mathbb{R}: \nabla f(t) = 0 \iff J_f(t) = 0$ (Nullmatrix)
 
 \noindent
-\textbf{Maximum} 
+\textbf{Sattelpunkt in a} $\det(H_f(a)) < 0$ wobei gilt 
 
-Erforderliche Eigenschaft:
-$J_f(a) = 0$
-
-Hinreichende Eigenschaft:
-
-$\det(H_f(a)) > 0$ und $H_f(a)$ negativ definit (z.B. $\frac{\partial^2 f}{\partial^2 x} < 0$)
+$\operatorname{sg}\left(\frac{\partial^2 f}{\partial^2 x}\right) \neq \operatorname{sg}\left(\frac{\partial^2 f}{\partial^2 y}\right)$
 
 \noindent
-\textbf{Minimum}
+\textbf{Extrema} 
+$\det(H_f(a)) > 0$ und
 
-Erforderliche Eigenschaft:
-$J_f(a) = 0$
+Maximum: $H_f(a)$ negativ definit (z.B. $\frac{\partial^2 f}{\partial^2 x} < 0$)
 
-Hinreichende Eigenschaft:
-
-$\det(H_f(a)) > 0$ und $H_f(a)$ positiv definit (z.B. $\frac{\partial^2 f}{\partial^2 x} > 0$)
+Minimum: $H_f(a)$ positiv definit (z.B. $\frac{\partial^2 f}{\partial^2 x} > 0$)
 
 \subsection{Lagrange-Funktion}
 \textbf{Funktion} 
@@ -422,50 +410,41 @@ $\mathcal L(x,y,\lambda)$ jeweils nach $x,y,\lambda$ ableiten und daraus auföse
 \textbf{Unbestimmte Integrale in $\mathbb R$}
 {\color{red} Bei Integralen + C nicht vergessen!}
 
+
+\noindent
 $
-\int x\sin(x) dx = -x cos(x) + sin(x) + C
+\int x\sin(x) dx = -x cos(x) + sin(x)
+\mid
+\int \cos(2x) dx = \frac{1}{2}sin(\frac{x}{2})
 $
 
+\noindent
 $
-\int \cos(2x) dx = \frac{1}{2}sin(\frac{x}{2}) + C
-$
-
-$
-\int \cos(x) dx = \sin(x) + C \mid \int \sin(x) dx = -\cos(x) + C
+\int \cos(x) dx = \sin(x) \mid \int \sin(x) dx = -\cos(x)
 $
 
+\noindent
 $
-\int \frac{1}{x} dx = ln(x) +C
-$
-
-$
+\int \frac{1}{x} dx = ln(x)
+\mid 
 \int xe^{x^2} dx = \frac{e^{x^2}}{2}
-$
-
-$
+\mid
 \int \frac{1}{\sqrt{x}} = 2\sqrt{x}
 $
 
-$
-\int \frac{1}{\sqrt{1-x^2}} = \arcsin(x) \mid \int \frac{-1}{\sqrt{1-x^2}} = \arccos(x)
-$
-
-$
-\int \frac{1}{1+x^2} = \arctan(x)
-$
-
+\noindent
 $
 \int \frac{1}{\sqrt{a^2-x^2}} = \arcsin(\frac{x}{a}) \mid \int \frac{-1}{\sqrt{a^2-x^2}} = \arccos(\frac{x}{a})
-$
-
-$
+\mid
 \int \frac{1}{x^2+a^2} = \frac{1}{a}\arctan(\frac{x}{a})
 $
 
+\noindent \textbf{Partielle Integration}
+
 $
-\int f'(x)\cdot g(x) \mathrm{d}x = \left[f(x)\cdot g(x)\right]_{a}^{b} - \int f(x)\cdot g'(x)\,\mathrm{d}x\\
+\int f'(x) \cdot g(x) \mathrm{d}x = f(x)\cdot g(x) - \int f(x)\cdot g'(x)\,\mathrm{d}x\\
 $
-Wahl von f: ln(x)$->\arcsin(x)$ etc. $->x^3$ etc. $->\sin(x)$ etc $->e^x$
+Wahl von f: $\ln(x) > \arcsin(x) > x^n > \sin(x) >e^x$
 
 \section{Differenzialgleichungen}
 
@@ -534,27 +513,26 @@ $$
 
 \noindent
 Lösungsbasis:
-{\tiny
-$$
-\begin{matrix}
-e^{\lambda_1 t},te^{\lambda_1 t}, \dots , t^{s_1-1}e^{\lambda_1t}\\
-e^{\lambda_2 t},te^{\lambda_2 t}, \dots , t^{s_2-1}e^{\lambda_2t}\\
-\vdots \\
-e^{\lambda_{m_1} t},te^{\lambda_{m_1} t}, \dots , t^{s_{m_1}-1}e^{\lambda_{m_1}t}\\
-e^{x_{m_1 +1 }t} \cdot \cos(y_{m_1+1}t), e^{x_{m_1 +1 }t} \cdot \sin(y_{m_1+1}t)\\
-\vdots\\
-t^{s_{m_1+1}-1}e^{x_{m_1 +1 }t} \cdot \cos(y_{m_1+1}t), \quad\dots \sin(y_{m_1+1}t)\\
-\vdots\\
-e^{x_{m_1 +m_2}t} \cdot \cos(y_{m_1 +m_2}t), \quad\dots \sin(y_{m_1 +m_2}t)\\
-\vdots\\
-t^{s_{m_1 +m_2}-1}e^{x_{m_1 +m_2}t} \cdot \cos(y_{m_1 +m_2}t), \quad\dots \sin(y_{m_1 +m_2}t)\\
-\end{matrix}
-$$
-}
+%{\tiny
+%$$
+%\begin{matrix}
+%e^{\lambda_1 t},te^{\lambda_1 t}, \dots , t^{s_1-1}e^{\lambda_1t}\\
+%e^{\lambda_2 t},te^{\lambda_2 t}, \dots , t^{s_2-1}e^{\lambda_2t}\\
+%\vdots \\
+%e^{\lambda_{m_1} t},te^{\lambda_{m_1} t}, \dots , t^{s_{m_1}-1}e^{\lambda_{m_1}t}\\
+%e^{x_{m_1 +1 }t} \cdot \cos(y_{m_1+1}t), e^{x_{m_1 +1 }t} \cdot \sin(y_{m_1+1}t)\\
+%\vdots\\
+%t^{s_{m_1+1}-1}e^{x_{m_1 +1 }t} \cdot \cos(y_{m_1+1}t), \quad\dots \sin(y_{m_1+1}t)\\
+%\vdots\\
+%e^{x_{m_1 +m_2}t} \cdot \cos(y_{m_1 +m_2}t), \quad\dots \sin(y_{m_1 +m_2}t)\\
+%\vdots\\
+%t^{s_{m_1 +m_2}-1}e^{x_{m_1 +m_2}t} \cdot \cos(y_{m_1 +m_2}t), \quad\dots \sin(y_{m_1 +m_2}t)\\
+%\end{matrix}
+%$$
+%}
 
 \noindent
-{\color{red}
-Annahme / Raten: Es gilt:
+
 Sei $\operatorname{grad}(k)$ Grad der Nullstelle k und $b>0$ o.b.d.a., dann gilt:
 $$
 \begin{aligned}
@@ -563,7 +541,8 @@ $$
 \\\cup \{t^q e^{a t} \cos(bt) \mid P(a + bi) = 0 \land t<\operatorname{grad}(a+bi) \}
 \end{aligned}
 $$
-}
+(Formell nicht ganz korrekt, aber hier anschaulicher)
+
 %\noindent
 %\textbf{Selbsttransponierende Tichymatrix}
 %\noindent
