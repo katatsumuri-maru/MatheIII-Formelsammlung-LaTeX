@@ -420,6 +420,7 @@ $\mathcal L(x,y,\lambda)$ jeweils nach $x,y,\lambda$ ableiten und daraus auföse
 
 \section{Mehrdimensionale Integrale}
 \textbf{Unbestimmte Integrale in $\mathbb R$}
+{\color{red} Bei Integralen + C nicht vergessen!}
 
 $
 \int x\sin(x) dx = -x cos(x) + sin(x) + C
@@ -430,19 +431,41 @@ $
 $
 
 $
-\int \cos(x) dx = \sin(x) + C
+\int \cos(x) dx = \sin(x) + C \mid \int \sin(x) dx = -\cos(x) + C
 $
 
 $
-\int \sin(x) dx = -\cos(x) + C
+\int \frac{1}{x} dx = ln(x) +C
 $
 
-$\int \frac{1}{x} dx = ln(x) +C$
+$
+\int xe^{x^2} dx = \frac{e^{x^2}}{2}
+$
 
-$\int xe^{x^2} dx = \frac{e^{x^2}}{2}$
+$
+\int \frac{1}{\sqrt{x}} = 2\sqrt{x}
+$
 
-$ 
-\int f'(x)\cdot g(x) \mathrm{d}x = \left[f(x)\cdot g(x)\right]_{a}^{b} - \int f(x)\cdot g'(x)\,\mathrm{d}x\\$
+$
+\int \frac{1}{\sqrt{1-x^2}} = \arcsin(x) \mid \int \frac{-1}{\sqrt{1-x^2}} = \arccos(x)
+$
+
+$
+\int \frac{1}{1+x^2} = \arctan(x)
+$
+
+$
+\int \frac{1}{\sqrt{a^2-x^2}} = \arcsin(\frac{x}{a}) \mid \int \frac{-1}{\sqrt{a^2-x^2}} = \arccos(\frac{x}{a})
+$
+
+$
+\int \frac{1}{x^2+a^2} = \frac{1}{a}\arctan(\frac{x}{a})
+$
+
+$
+\int f'(x)\cdot g(x) \mathrm{d}x = \left[f(x)\cdot g(x)\right]_{a}^{b} - \int f(x)\cdot g'(x)\,\mathrm{d}x\\
+$
+Wahl von f: ln(x)$->\arcsin(x)$ etc. $->x^3$ etc. $->\sin(x)$ etc $->e^x$
 
 \section{Differenzialgleichungen}
 
