@@ -285,14 +285,12 @@ im Punkt \( t_0 = 0 \) nach \( t \) differenzierbar ist. Weiter ist die Ableitun
 
 \noindent
 \textbf{mit Jacobimatrix}
-In Punkt $A$ in Richtung $e$ \\
-$J_f(a)\cdot e_1$ \\
+In Punkt $A$ in Richtung $e$ ist $J_f(a)\cdot e_1$
 
+\noindent
 \textbf{mit Phi}
 Im Punkt $(x,y)$ in Richtung $e=(a,b)$ \\
-$\phi_{(a,b)}(t)=f(x+ta,y+tb)$ \\
-Dann $\phi_{(a,b)}'(t)=0$
-
+$\phi_{(a,b)}(t)=f(x+ta,y+tb)$ Dann $\phi_{(a,b)}'(t)=0$
 
 \subsection{Die Ableitung}
 Sei $D \subseteq \mathbb R^n$ ein Gebiet, dann heißt $f:D \to \mathbb R^n$ differenzierbar in $a \in D$, wenn es $L:\mathbb R^n \to \mathbb R^m$ gibt mit  
@@ -365,6 +363,14 @@ $
 \noindent
 und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\| < c$ und $f(x, y) = 0$ gilt: $y = h(x)$.
 
+
+\end{paracol}
+
+\begin{paracol}{3}
+\newpage
+
+\setcounter{section}{2}
+\setcounter{subsection}{3}
 \noindent
 \textbf{Taylorpolynome}
 
@@ -377,16 +383,6 @@ $
 $
 T(a+h) = f(a) +  J_f(a) h + \frac{1}{2} h^T H_f(a)h + R\cdot (x_1^2, \dots, x_n^2)
 $
-
-\end{paracol}
-
-\begin{paracol}{3}
-
-
-
-\newpage
-\setcounter{section}{2}
-\setcounter{subsection}{3}
 
 
 \subsection{Analysis}
@@ -433,7 +429,11 @@ $\mathcal L(x,y,\lambda)$ jeweils nach $x,y,\lambda$ ableiten und daraus auföse
 $
 \int x\sin(x) dx = -x cos(x) + sin(x)
 \mid
-\int \cos(2x) dx = \frac{1}{2}sin(\frac{x}{2})
+\int \cos(2x) dx = \frac{1}{2}sin(2x)
+\mid
+\int \sin^2(x) dx = \frac{1}{2}(x-\sin(x)\cos(x))
+\mid
+\int \cos^2(x) dx = \frac{1}{2}(x+\sin(x)\cos(x))
 $
 
 \noindent
@@ -445,16 +445,18 @@ $
 $
 \int \frac{1}{x} dx = ln(x)
 \mid 
+\int \frac{1}{x^2} dx = \frac{-1}{x}
+\mid
 \int xe^{x^2} dx = \frac{e^{x^2}}{2}
 \mid
-\int \frac{1}{\sqrt{x}} = 2\sqrt{x}
+\int \frac{1}{\sqrt{x}} dx= 2\sqrt{x}
 $
 
 \noindent
 $
-\int \frac{1}{\sqrt{a^2-x^2}} = \arcsin(\frac{x}{a}) \mid \int \frac{-1}{\sqrt{a^2-x^2}} = \arccos(\frac{x}{a})
+\int \frac{1}{\sqrt{a^2-x^2}} dx= \arcsin(\frac{x}{a}) \mid \int \frac{-1}{\sqrt{a^2-x^2}} dx= \arccos(\frac{x}{a})
 \mid
-\int \frac{1}{x^2+a^2} = \frac{1}{a}\arctan(\frac{x}{a})
+\int \frac{1}{x^2+a^2} dx= \frac{1}{a}\arctan(\frac{x}{a})
 $
 
 \noindent \textbf{Partielle Integration}
@@ -493,6 +495,9 @@ $$
 x_p = c_2t^2 + c_1t + c_0 \quad \texttt{und} \quad  \dot{x_p} = 2c_2t +c_1
 $$
 
+
+\switchcolumn
+\newpage 
 \noindent
 Einsetzen
 $$
@@ -503,11 +508,6 @@ $$
 $$
 $\to$ Auflösen nach $c_1, c_2, c_3$
 
-\switchcolumn
-
-
-
-\newpage
 \noindent
 \textbf{Homogene DGs 2. Ordnung $\ddot{x} = ax + b\dot{x}$}
 
@@ -610,8 +610,11 @@ x &= 2t - 2 + 2e^{-t}
 \end{aligned}
 $$
 
+\noindent
+\textbf{Standardlösungen}
+$\dot{x} = nx \to x = e^{nt+k}$
+
 \switchcolumn
-\newpage
 \setcounter{section}{4}
 \section{Anhang}
 \noindent
