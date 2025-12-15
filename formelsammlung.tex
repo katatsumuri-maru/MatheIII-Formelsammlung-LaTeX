@@ -307,11 +307,11 @@ $$f: \mathbb{R}^k \to \mathbb{R}^n;   J_f(a) = \begin{bmatrix}
 $$
 $$
 H_f(a) = \begin{bmatrix}
-\frac{\partial^2 f}{\partial^2 \partial x_1} & \frac{\partial^2 f}{\partial x_1 \partial x_2} &\dots &\frac{\partial^2 f}{ \partial x_1 \partial x_n}\\
+\frac{\partial^2 f}{\partial^2 x_1} & \frac{\partial^2 f}{\partial x_1 \partial x_2} &\dots &\frac{\partial^2 f}{ \partial x_1 \partial x_n}\\
+\frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial^2 x_2} &\dots &\frac{\partial^2 f}{\partial x_2 \partial x_n}\\
 \vdots & \vdots & \ddots & \vdots\\
-\frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial^2 x_2} &\dots &\frac{\partial^2 f}{\partial x_1 \partial x_n}\\
-\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_m \partial x_2} &\dots &\frac{\partial^2 f}{\partial  x_n \partial x_n}\\
-\end{bmatrix}
+\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_n \partial x_2} &\dots &\frac{\partial^2 f}{\partial^2  x_n}\\
+\end{bmatrix}\in \mathbb R^{n\times n}
 $$
 
 \noindent
