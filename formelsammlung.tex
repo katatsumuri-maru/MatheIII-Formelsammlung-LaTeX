@@ -348,6 +348,14 @@ $
 $\operatorname{div}(f) = \nabla f := \sum_{i=1}^n \frac{\partial f_i}{\partial x_i}$
 
 \noindent
+\textbf{Das totale Differential}
+
+\noindent
+Sei $f(x,y) = x^2y^4, x(t) = cos(t), y(t) = e^t$, dann ist 
+
+$\frac{df}{dt} = \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} \cdot \frac{\partial y}{\partial t} =  -2xy^4\sin(t) + 4x^2y^3e^t $
+
+\noindent
 \textbf{Rotation: $f: \mathbb R^3 \to \mathbb R^3$}
 
 $\nabla \times f(a) := \left( \frac{\partial f_3}{\partial x_2}(a) - \frac{\partial f_2}{\partial x_3}(a), \frac{\partial f_1}{\partial x_3}(a) - \frac{\partial f_3}{\partial x_1}(a), \frac{\partial f_2}{\partial x_1}(a) - \frac{\partial f_1}{\partial x_2}(a) \right)$
@@ -373,6 +381,11 @@ und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\
 
 \setcounter{section}{2}
 \setcounter{subsection}{3}
+\noindent
+\textbf{Implizites Differenzieren}
+$h'(x) = -\frac{\frac{\partial f}{\partial x}}{\frac{\partial f}{\partial y}}$
+
+
 \noindent
 \textbf{Taylorpolynome}
 
@@ -496,6 +509,13 @@ $$
 $$
 $\longrightarrow$ Nach x auflösen 
 
+
+
+
+
+\switchcolumn
+\newpage 
+
 \noindent
 \textbf{Nichthomogene DGs 1. Ordnung}
 Sei $\dot{x} = ax + g(t)$ Differentialgleichung und $x_h(t)$ Lösung der zugehörigen homogenen Differentialgleichung $\dot{x} = ax$, dann ist $\color{red}\alpha x_h +x_p$ eine Lösung für die Diffentialgleichung. Beispiel Bestimmung von $x_p$:
@@ -503,10 +523,6 @@ $$
 \dot{x} = 2x - 4t^2 -4t + 2
 $$
 
-
-
-\switchcolumn
-\newpage 
 
 \noindent
 Dann haben $x_p, \dot{x_p}$ die Form
