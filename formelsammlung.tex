@@ -82,7 +82,7 @@ $
 
 \textbf{$l_p$-Norm}
 $
-||x||_p = \sqrt[p]{x_1^p+\dots+x_n^p}
+||x||_p = \sqrt[p]{|x_1|^p+\dots+|x_n|^p} \texttt{ mit } p\ge 1
 $
 
 \textbf{Maximum-Norm}
@@ -285,7 +285,7 @@ im Punkt \( t_0 = 0 \) nach \( t \) differenzierbar ist. Weiter ist die Ableitun
 
 \noindent
 \textbf{mit Jacobimatrix}
-In Punkt $A$ in Richtung $e$ ist $J_f(a)\cdot e_1$
+In Punkt $A$ in Richtung $e$ ist $J_f(a)\cdot e$
 
 \noindent
 \textbf{mit Phi}
@@ -295,7 +295,7 @@ $\phi_{(a,b)}(t)=f(x+ta,y+tb)$ Dann $\phi_{(a,b)}'(t)=0$
 \subsection{Die Ableitung}
 Sei $D \subseteq \mathbb R^n$ ein Gebiet, dann heißt $f:D \to \mathbb R^n$ differenzierbar in $a \in D$, wenn es $L:\mathbb R^n \to \mathbb R^m$ gibt mit  
 
-$\lim \limits_{||h|| \to 0} \frac{||f(a+h) . f(a) -Lh||}{||h||} = 0$
+$\lim \limits_{||h|| \to 0} \frac{||f(a+h) - f(a) -Lh||}{||h||} = 0$
 
 \noindent
 \textbf{Jacobimatrix \& Hessematrix}
@@ -305,13 +305,15 @@ $$f: \mathbb{R}^k \to \mathbb{R}^n;   J_f(a) = \begin{bmatrix}
 \vdots &\ddots &\vdots \\ 
 \frac{\partial f_n}{\partial x_1} &\dots & \frac{\partial f_n}{\partial x_k} \end{bmatrix} \in \mathbb{R}^{n\times k}
 $$
+
 $$
 H_f(a) = \begin{bmatrix}
 \frac{\partial^2 f}{\partial^2 x_1} & \frac{\partial^2 f}{\partial x_1 \partial x_2} &\dots &\frac{\partial^2 f}{ \partial x_1 \partial x_n}\\
+
 \frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial^2 x_2} &\dots &\frac{\partial^2 f}{\partial x_2 \partial x_n}\\
 \vdots & \vdots & \ddots & \vdots\\
-\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_n \partial x_2} &\dots &\frac{\partial^2 f}{\partial^2  x_n}\\
-\end{bmatrix}\in \mathbb R^{n\times n}
+\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_n \partial x_2} &\dots &\frac{\partial^2 f}{\partial^2  x_n }\\
+\end{bmatrix}
 $$
 
 \noindent
@@ -384,6 +386,18 @@ $
 T(a+h) = f(a) +  J_f(a) h + \frac{1}{2} h^T H_f(a)h + R\cdot (x_1^2, \dots, x_n^2)
 $
 
+\noindent \textbf{Vektorraumdarstellung}
+
+$\begin{pmatrix}
+x_0 \\ y_0 \\ f(x_0,y_0)
+\end{pmatrix} + s \cdot \begin{pmatrix}
+1 \\ 0 \\ f_x(P)
+\end{pmatrix}
++ r \cdot \begin{pmatrix}
+0 \\ 1\\ f_y(P)
+\end{pmatrix}
+$
+
 
 \subsection{Analysis}
 \textbf{Sattelpunkt, Extrema}:
@@ -427,9 +441,9 @@ $\mathcal L(x,y,\lambda)$ jeweils nach $x,y,\lambda$ ableiten und daraus auföse
 
 \noindent
 $
-\int x\sin(x) dx = -x cos(x) + sin(x)
+\int x\sin(x) dx = -x \cos(x) + \sin(x)
 \mid
-\int \cos(2x) dx = \frac{1}{2}sin(2x)
+\int \cos(2x) dx = \frac{1}{2}\sin(2x)
 \mid
 \int \sin^2(x) dx = \frac{1}{2}(x-\sin(x)\cos(x))
 \mid
@@ -443,7 +457,7 @@ $
 
 \noindent
 $
-\int \frac{1}{x} dx = ln(x)
+\int \frac{1}{x} dx = ln(|x|)
 \mid 
 \int \frac{1}{x^2} dx = \frac{-1}{x}
 \mid
@@ -489,20 +503,22 @@ $$
 \dot{x} = 2x - 4t^2 -4t + 2
 $$
 
+
+
+\switchcolumn
+\newpage 
+
+\noindent
 Dann haben $x_p, \dot{x_p}$ die Form
 
 $$
 x_p = c_2t^2 + c_1t + c_0 \quad \texttt{und} \quad  \dot{x_p} = 2c_2t +c_1
 $$
-
-
-\switchcolumn
-\newpage 
 \noindent
 Einsetzen
 $$
 \begin{aligned}
-    \dot{x_p} - x_p &= (-4t^2 - 4t +2)\\
+    \dot{x_p} - 2x_p &= (-4t^2 - 4t +2)\\
     (2c_2t + c_1) -2(c_2t^2 + c_1t + c_0) &= (-4t^2 - 4t +2)\\
 \end{aligned}
 $$
@@ -527,7 +543,7 @@ Charakteristisches Polynom: $\lambda^n - \sum_{i=0}^{n-1} a_i \lambda^i$
 $$
 \begin{aligned}
 \operatorname{P}(\lambda) &= \lambda^n - \sum_{i=0}^{n-1} a_i \lambda^i\\
-&= \underbrace{\prod_{k=1}^{m_1} (\lambda - \lambda_k)^{s_k}}_{\text{Reelle Nullstellen}} + \underbrace{\prod_{k=m_1 + 1}^{m_1 + m_2} ((\lambda - \lambda_k)(\lambda - \overline{\lambda_k}))^{s_k}}_{\substack{\text{Komplexe Nullstellen} \\ \lambda_k = x_k+y_ki}}
+&= \underbrace{\prod_{k=1}^{m_1} (\lambda - \lambda_k)^{s_k}}_{\text{Reelle Nullstellen}} \cdot \underbrace{\prod_{k=m_1 + 1}^{m_1 + m_2} ((\lambda - \lambda_k)(\lambda - \overline{\lambda_k}))^{s_k}}_{\substack{\text{Komplexe Nullstellen} \\ \lambda_k = x_k+y_ki}}
 \end{aligned}
 $$
 
