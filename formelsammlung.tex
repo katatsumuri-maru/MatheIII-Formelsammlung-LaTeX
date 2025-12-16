@@ -156,12 +156,15 @@ $
 $
 
 \noindent
-\textbf{4 Quadrante}
-$x,y\geq 0$
-$x<0,y\geq 0$
-$x,y<0$
-$x\geq 0,y<0$
+\textbf{Die vier Quadranten}
 
+$\begin{aligned}
+\text{I:} \quad x \geq 0 , y \geq 0 \\
+\text{II:} \quad  x < 0, y \geq 0 \\
+\text{III:} \quad  x < 0, y < 0 \\
+\text{IV:} \quad x \geq 0, y < 0 \\
+\end{aligned}
+$
 
 \switchcolumn
 
@@ -237,27 +240,45 @@ mit $\alpha = (\alpha_1, \dots, \alpha_n)$ Multiindex, $a_\alpha \in \mathbb{R}$
 \subsection{Ableitungsregeln in $\mathbb R^1$}
 
 \noindent
-\textbf{Linearität}
-$ (f + g)' = f' + g' \qquad (c \cdot f)' = c \cdot f' $
-
-\noindent
-Produkt $ (f \cdot g)' = f' \cdot g + f \cdot g'\quad$Quot.$  \left( \frac{f}{g}\right)' = \frac{f' \cdot g - f \cdot g'}{g^2} $
-
-\noindent
-Ketten $ (f(g(x))'= f'(g(x)) \cdot g'(x) $
-Potenzen $ (x^n)' = n x^{n-1} $
-
-\noindent \textbf{Basics}
-
-$(\ln(x))' =  \frac{1}{x}  \mid (\frac{1}{x})' =  \frac{-1}{x^2} \mid (\sin(x))' = \cos(x) \mid (\cos(x))' = -\sin(x)  $
-
-\noindent 
-\textbf{Shortcuts}
-$(a^x)' = \ln(a) \cdot a^x \mid (\sqrt{x})' = \frac{1}{2 \sqrt{x}} \mid (\sqrt[n]{x})' = \frac{1}{n \cdot \sqrt[n]{x}^{n-1}} \mid (\frac{1}{x^2})' = \frac{-2}{x^3}$
-
-\noindent
-\textbf{Weitere}
-$(\ln(f(x)))' = \frac{f'(x)}{f(x)} \mid \arctan(x)' = \frac{1}{x^2+1} \mid \arccos(x)' = \frac{-1}{\sqrt{1-x^2}}\mid \arcsin(x)' = \frac{1}{\sqrt{1-x^2}}$
+$\textbf{\color{red}Linear }  
+(f + g)' = f' + g' \qquad (c \cdot f)' = c \cdot f'
+\mid
+\textbf{\color{red}Produkt }  
+(f \cdot g)' = f' \cdot g + f \cdot g'
+\mid
+\textbf{\color{red}Quot } \left( \frac{f}{g}\right)' = \frac{f' \cdot g - f \cdot g'}{g^2} 
+\mid
+\textbf{\color{red}Ketten } 
+(f(g(x))'= f'(g(x)) \cdot g'(x)
+\mid
+\textbf{\color{red}Potenzen } (x^n)' = n x^{n-1}  \mid (\frac{1}{x})' =  \frac{-1}{x^2} 
+\\
+\textbf{\color{red}Trig }
+(\sin(x))' = \cos(x) 
+\mid (\cos(x))' = -\sin(x)
+\mid \tan(x))'=1+\tan^2(x)=\frac{1}{\cos^2(x)}
+\arctan(x)' = \frac{1}{x^2+1} 
+\mid \arccos(x)' = \frac{-1}{\sqrt{1-x^2}}
+\mid \arcsin(x)' = \frac{1}{\sqrt{1-x^2}}
+\\
+\textbf{\color{red}Exp }
+(\ln(x))' =  \frac{1}{x}
+\mid 
+(e^x)' = e^x 
+\\
+\textbf{\color{red}Shortcuts }
+(a^x)' = \ln(a) \cdot a^x \mid
+\
+(\sqrt{x})' = \frac{1}{2 \sqrt{x}} 
+\
+\mid (\sqrt[n]{x})' = \frac{1}{n \cdot \sqrt[n]{x}^{n-1}}
+\
+\mid \left(\sqrt{(f(x))}\right)' = \frac{f'(x)}{2\sqrt{(f(x))}}
+\
+\mid (\frac{1}{x^2})' = \frac{-2}{x^3} (\ln(f(x)))' = \frac{f'(x)}{f(x)}
+\
+\mid ((x^nf(x))'=nx^{n-1}f(x)+x^nf'(x))
+$
 \switchcolumn
 
 \setcounter{section}{2}
@@ -316,6 +337,11 @@ H_f(a) = \begin{bmatrix}
 \end{bmatrix}
 $$
 
+\noindent \textbf{Die Kettenregel}
+Sei $h(x) = f(g(x)) = (f \circ g)(x)$ 
+
+Dann lautet $J_h(x) = J_f(g(x)) \cdot J_g(x)$
+
 \noindent
 \textbf{Tangentialebene an Punkt a $f: \mathbb R^n \to \mathbb R$}
 
@@ -329,6 +355,18 @@ T(x_1, \ldots, x_n) = f(a_1, \ldots, a_n)
 + \sum_{i=1}^n \frac{\partial f}{\partial x_i}(a_1, \ldots, a_n)\cdot (x_i - a_i)
 $
 
+\noindent
+\textbf{Lokale Auflösung / Satz von der impliziten Funktion}
+
+\noindent
+Sei $f: D \subseteq \mathbb{R}^2 \to \mathbb{R}$ stetig differenzierbar, $(a, b) \in D$ mit $f(a, b) = 0$ und $\frac{\partial f}{\partial y}(a, b) \neq 0$. Dann existiert eine offene Umgebung $I$ von $a$ und eine eindeutig bestimmte, stetig differenzierbare Funktion $h: I \to \mathbb{R}$ mit $h(a) = b$, sodass
+
+$
+f(x, h(x)) = 0 \quad \text{für alle } x \in I
+$
+
+\noindent
+und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\| < c$ und $f(x, y) = 0$ gilt: $y = h(x)$.
 
 \noindent
 \textbf{Gradient $f: \mathbb R^n \to \mathbb R$}
@@ -355,23 +393,7 @@ Sei $f(x,y) = x^2y^4, x(t) = cos(t), y(t) = e^t$, dann ist
 
 $\frac{df}{dt} = \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} \cdot \frac{\partial y}{\partial t} =  -2xy^4\sin(t) + 4x^2y^3e^t $
 
-\noindent
-\textbf{Rotation: $f: \mathbb R^3 \to \mathbb R^3$}
 
-$\nabla \times f(a) := \left( \frac{\partial f_3}{\partial x_2}(a) - \frac{\partial f_2}{\partial x_3}(a), \frac{\partial f_1}{\partial x_3}(a) - \frac{\partial f_3}{\partial x_1}(a), \frac{\partial f_2}{\partial x_1}(a) - \frac{\partial f_1}{\partial x_2}(a) \right)$
-
-\noindent
-\textbf{Lokale Auflösung / Satz von der impliziten Funktion}
-
-\noindent
-Sei $f: D \subseteq \mathbb{R}^2 \to \mathbb{R}$ stetig differenzierbar, $(a, b) \in D$ mit $f(a, b) = 0$ und $\frac{\partial f}{\partial y}(a, b) \neq 0$. Dann existiert eine offene Umgebung $I$ von $a$ und eine eindeutig bestimmte, stetig differenzierbare Funktion $h: I \to \mathbb{R}$ mit $h(a) = b$, sodass
-
-$
-f(x, h(x)) = 0 \quad \text{für alle } x \in I
-$
-
-\noindent
-und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\| < c$ und $f(x, y) = 0$ gilt: $y = h(x)$.
 
 
 \end{paracol}
@@ -381,6 +403,12 @@ und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\
 
 \setcounter{section}{2}
 \setcounter{subsection}{3}
+
+\noindent
+\textbf{Rotation: $f: \mathbb R^3 \to \mathbb R^3$}
+
+$\nabla \times f(a) := \left( \frac{\partial f_3}{\partial x_2}(a) - \frac{\partial f_2}{\partial x_3}(a), \frac{\partial f_1}{\partial x_3}(a) - \frac{\partial f_3}{\partial x_1}(a), \frac{\partial f_2}{\partial x_1}(a) - \frac{\partial f_1}{\partial x_2}(a) \right)$
+
 \noindent
 \textbf{Implizites Differenzieren}
 $h'(x) = -\frac{\frac{\partial f}{\partial x}}{\frac{\partial f}{\partial y}}$
@@ -450,10 +478,9 @@ $\mathcal L(x,y,\lambda)$ jeweils nach $x,y,\lambda$ ableiten und daraus auföse
 \section{Mehrdimensionale Integrale}
 \textbf{Unbestimmte Integrale in $\mathbb R$}
 {\color{red} Bei Integralen + C nicht vergessen!}
-
-
 \noindent
 $
+\textbf{\color{red}Trig}
 \int x\sin(x) dx = -x \cos(x) + \sin(x)
 \mid
 \int \cos(2x) dx = \frac{1}{2}\sin(2x)
@@ -461,26 +488,26 @@ $
 \int \sin^2(x) dx = \frac{1}{2}(x-\sin(x)\cos(x))
 \mid
 \int \cos^2(x) dx = \frac{1}{2}(x+\sin(x)\cos(x))
-$
-
-\noindent
-$
+\mid
 \int \cos(x) dx = \sin(x) \mid \int \sin(x) dx = -\cos(x)
-$
-
-\noindent
-$
-\int \frac{1}{x} dx = ln(|x|)
+\mid
+\textbf{\color{red}Pot}
+\int \frac{1}{x} dx = \ln(|x|)
+\mid 
+\int \frac{1}{ax+b} dx = \frac{1}{a}\ln(|ax+b|)
 \mid 
 \int \frac{1}{x^2} dx = \frac{-1}{x}
 \mid
-\int xe^{x^2} dx = \frac{e^{x^2}}{2}
+\int \frac{1}{x^n} dx = \frac{x^{1-n}}{1-n}
 \mid
 \int \frac{1}{\sqrt{x}} dx= 2\sqrt{x}
-$
-
-\noindent
-$
+\mid
+\textbf{\color{red}Exp}
+\int xe^{x^2} dx = \frac{e^{x^2}}{2}
+\mid
+\int xe^{ax} dx = \frac{e^{ax}}{a}
+\mid
+\textbf{\color{red}Arc}
 \int \frac{1}{\sqrt{a^2-x^2}} dx= \arcsin(\frac{x}{a}) \mid \int \frac{-1}{\sqrt{a^2-x^2}} dx= \arccos(\frac{x}{a})
 \mid
 \int \frac{1}{x^2+a^2} dx= \frac{1}{a}\arctan(\frac{x}{a})
