@@ -95,7 +95,7 @@ $
 Jede Norm induziert über $d(x,y) = ||x-y||$ eine Metrik.
 
 \subsection{Bilinearform}
-Eine Funktion $\langle.,. \rangle_A : \mathbb R^n \times \mathbb R^n \to \mathbb R$ heißt billinearform, wenn sie in beiden Argumenten linear ist:
+Eine Funktion $\langle.,. \rangle_A : \mathbb R^n \times \mathbb R^n \to \mathbb R$ heißt Bilinearform, wenn sie in beiden Argumenten linear ist:
 
 $
 \langle \alpha x + \beta y, z\rangle_A = \alpha \langle x,z \rangle_A + \beta \langle y,z \rangle_A
@@ -249,7 +249,7 @@ $\textbf{\color{red}Linear }
 \textbf{\color{red}Quot } \left( \frac{f}{g}\right)' = \frac{f' \cdot g - f \cdot g'}{g^2} 
 \mid
 \textbf{\color{red}Ketten } 
-(f(g(x))'= f'(g(x)) \cdot g'(x)
+(f(g(x)))'= f'(g(x)) \cdot g'(x)
 \mid
 \textbf{\color{red}Potenzen } (x^n)' = n x^{n-1}  \mid (\frac{1}{x})' =  \frac{-1}{x^2} 
 \\
@@ -271,7 +271,7 @@ $\textbf{\color{red}Linear }
 \
 (\sqrt{x})' = \frac{1}{2 \sqrt{x}} 
 \
-\mid (\sqrt[n]{x})' = \frac{1}{n \cdot \sqrt[n]{x}^{n-1}}
+\mid (\sqrt[n]{x})' = \frac{1}{n \cdot \sqrt[n]{{x}^{n-1}}}
 \
 \mid \left(\sqrt{(f(x))}\right)' = \frac{f'(x)}{2\sqrt{(f(x))}}
 \
@@ -305,13 +305,17 @@ $
 im Punkt \( t_0 = 0 \) nach \( t \) differenzierbar ist. Weiter ist die Ableitung von \( f \) im Punkt \( x_0 \) in Richtung \( e \) gleich der Ableitung von \( \varphi_e(t) \) im Punkt \( t_0 = 0 \).
 
 \noindent
-\textbf{mit Jacobimatrix}
-In Punkt $A$ in Richtung $e$ ist $J_f(a)\cdot e$
+\textbf{Mit Jacobimatrix}
+In Punkt $a$ in Richtung $e$ ist $J_f(a)\cdot e$
 
 \noindent
-\textbf{mit Phi}
+\textbf{Mit Phi}
 Im Punkt $(x,y)$ in Richtung $e=(a,b)$ \\
 $\phi_{(a,b)}(t)=f(x+ta,y+tb)$ Dann $\phi_{(a,b)}'(t)=0$
+
+
+\noindent\textbf{Mit Grenzwert} Im Punkt $(x,y)$ in Richtung $e=(a,b)$ \\
+$\frac{\partial f}{\partial e}((x,y))=\lim\limits_{t\to 0}\frac{f((x,y)+te)-f((x,y))}{t}$
 
 \subsection{Die Ableitung}
 Sei $D \subseteq \mathbb R^n$ ein Gebiet, dann heißt $f:D \to \mathbb R^n$ differenzierbar in $a \in D$, wenn es $L:\mathbb R^n \to \mathbb R^m$ gibt mit  
@@ -341,6 +345,11 @@ $$
 Sei $h(x) = f(g(x)) = (f \circ g)(x)$ 
 
 Dann lautet $J_h(x) = J_f(g(x)) \cdot J_g(x)$
+
+\noindent \textbf{Ableitung der Umkehrfunktion $g(f(x)) = x$}
+Sei $b = f(a)$, dann ist 
+
+$J_g({\color{red}b}) = (J_f({\color{red}a}))^{-1} \rightarrow$ Matrixinversion
 
 \noindent
 \textbf{Tangentialebene an Punkt a $f: \mathbb R^n \to \mathbb R$}
@@ -374,26 +383,16 @@ und es gibt ein $c > 0$, sodass für alle $(x, y) \in D$ mit $\|(x, y) - (a, b)\
 $
 \operatorname{grad}(f) = \nabla f = J_f^T = 
 \begin{pmatrix}
-    \frac{\partial f}{\partial x_1}\\
-    \vdots \\
+    \frac{\partial f}{\partial x_1} &
+    \dots &
     \frac{\partial f}{\partial x_n}
-\end{pmatrix}
-$
+\end{pmatrix}^{\color{red} T}
+$ {\color{red}(Transponieren !)}
 
 \noindent
 \textbf{Divergenz $f: \mathbb R^n \to \mathbb R^n$}
 
 $\operatorname{div}(f) = \nabla f := \sum_{i=1}^n \frac{\partial f_i}{\partial x_i}$
-
-\noindent
-\textbf{Das totale Differential}
-
-\noindent
-Sei $f(x,y) = x^2y^4, x(t) = cos(t), y(t) = e^t$, dann ist 
-
-$\frac{df}{dt} = \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} \cdot \frac{\partial y}{\partial t} =  -2xy^4\sin(t) + 4x^2y^3e^t $
-
-
 
 
 \end{paracol}
@@ -408,6 +407,17 @@ $\frac{df}{dt} = \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial 
 \textbf{Rotation: $f: \mathbb R^3 \to \mathbb R^3$}
 
 $\nabla \times f(a) := \left( \frac{\partial f_3}{\partial x_2}(a) - \frac{\partial f_2}{\partial x_3}(a), \frac{\partial f_1}{\partial x_3}(a) - \frac{\partial f_3}{\partial x_1}(a), \frac{\partial f_2}{\partial x_1}(a) - \frac{\partial f_1}{\partial x_2}(a) \right)$
+
+\noindent
+\textbf{Das totale Differential}
+
+\noindent
+Sei $f(x,y) = x^2y^4, x(t) = cos(t), y(t) = e^t$, dann ist 
+
+$\frac{df}{dt} = \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} \cdot \frac{\partial y}{\partial t} =  -2xy^4\sin(t) + 4x^2y^3e^t $
+
+
+
 
 \noindent
 \textbf{Implizites Differenzieren}
@@ -520,6 +530,15 @@ $
 $
 Wahl von f: $\ln(x) > \arcsin(x) > x^n > \sin(x) >e^x$
 
+
+
+
+
+\switchcolumn
+\newpage 
+
+\setcounter{section}{3}
+
 \section{Differentialgleichungen}
 \noindent
 \textbf{DGs 1. Ordnung }
@@ -537,11 +556,6 @@ $$
 $\longrightarrow$ Nach x auflösen 
 
 
-
-
-
-\switchcolumn
-\newpage 
 
 \noindent
 \textbf{Nichthomogene DGs 1. Ordnung}
@@ -648,6 +662,13 @@ $$
 %\]
 %gilt. In diesem Fall ist die Tichymatrix ein Vektor, der unter Transposition seine Gestalt bewahrt und dabei stets freundlich bleibt.
 
+
+
+\switchcolumn
+
+\setcounter{section}{4}
+
+
 \noindent
 \textbf{Substitution}
 Sei $\dot{x} = f(at+bx+c)$ Differentialgleichung. Substituiere $u = at+bx+c \implies \dot{u} = a+b \cdot \dot{x} = a+bf(u)$ 
@@ -673,9 +694,8 @@ $$
 \textbf{Standardlösungen}
 $\dot{x} = nx \to x = e^{nt+k}$
 
-\switchcolumn
-\setcounter{section}{4}
 \section{Anhang}
+
 \noindent
 \textbf{Matrixindizes}
 
