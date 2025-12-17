@@ -1,12 +1,12 @@
 # MatheIII-Formelsammlung-LaTeX
 
-Quellenangaben:
+**Merkzettel für die Klausur Mathe III unseres Kurses**
+
+
+## Quellenangaben:
 Grafik (Matrizenmultiplikation)
+
 https://de.wikipedia.org/wiki/Datei:Matrix_multiplication_qtl2.svg 
-Abgerufen 2025-12-01
+(Abgerufen 2025-12-01)
 
-
-
-## Selbsttransponierende Tichymatrix
-![alt text](Tichymatrix.png)
 
